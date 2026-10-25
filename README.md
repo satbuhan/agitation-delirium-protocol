@@ -1,0 +1,89 @@
+# Butyrophenone Selection — Acute Agitation & Hyperactive Delirium
+
+An interactive, referenced walkthrough of the algorithm for selecting a
+butyrophenone (droperidol or haloperidol) in acute agitation and
+hyperactive delirium. Every box and decision point in the diagram can be
+selected to reveal, in one place: what the step means, why the protocol
+calls for it, the exact dosing as authored, and the sources behind it.
+
+**Live site:** https://satbuhan.github.io/agitation-delirium-protocol/
+
+**Authors:** Dr. Özgür Karcıoğlu & Dr. Satuk Buğra Han Bozatlı
+
+This tool is a companion to
+[the acute aortic dissection protocol](https://github.com/satbuhan/aortic-dissection-protocol) —
+same methodology, separate repository.
+
+## Why this exists
+
+A flowchart alone tells a reader *what* to do at each step but not *why*,
+and a reader outside the authors' own team cannot easily check the
+evidence behind a specific number (a dose, a reassessment interval, a
+cutoff). This page keeps the original algorithm exactly as authored, and
+attaches the clinical reasoning and literature to each box without
+cluttering the diagram itself.
+
+The algorithm this page presents is Figure 1 of a systematic review by
+the same authors on haloperidol versus droperidol in the management of
+delirium and psychotic agitation in the acute care setting (manuscript in
+preparation); the supplementary content on this page draws on that
+review's evidence base, cross-checked against independent sourcing for
+every citation.
+
+## Status
+
+This is a working version, built to be tested on both desktop and mobile.
+One citation is explicitly flagged in the UI and in `assets/content.js`
+as a number/source the literature search behind this page could not
+independently verify (the "Sedation Assessment Tool" reference) — flagged
+for the author team to confirm, rather than invented. Everything else is
+paraphrased from a cited source, listed in the References section at the
+bottom of the page.
+
+## Disclaimer
+
+This is an academic / educational reference tool, not a substitute for
+institutional protocol or bedside clinical judgement. Verify any dose or
+threshold against current local protocol before clinical use.
+
+## How it's built
+
+Plain HTML/CSS/JS, no build step and no framework — a single static site
+that GitHub Pages can serve directly.
+
+```
+index.html          page structure
+assets/style.css     design (the "paper" masthead/references,
+                      the diagram scope + readout panel)
+assets/content.js     ← single source of truth for every node's text,
+                      dosing, and reference list. Edit this file to change
+                      what the page says.
+assets/app.js         rendering + interaction (builds the diagram and the
+                      connector lines from content.js, handles the
+                      click-to-expand panel on desktop and the bottom
+                      sheet on mobile)
+```
+
+### Running it locally
+
+No install needed:
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+### Editing content
+
+Open `assets/content.js`. Each entry in `NODES` is one box or decision
+diamond from the algorithm (`meaning`, `rationale`, optional `dose` table,
+and `refs` pointing at numbered entries in `REFERENCES`). Add or edit a
+reference in `REFERENCES` and point to it by `id` from any node. Never
+change a node's `label`, `sub`, or `dose` text without the author team's
+sign-off — those fields are the algorithm itself.
+
+## License
+
+Content and code are released under
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) —
+share and adapt with attribution, non-commercially, under the same license.
