@@ -82,6 +82,13 @@ reference in `REFERENCES` and point to it by `id` from any node. Never
 change a node's `label`, `sub`, or `dose` text without the author team's
 sign-off — those fields are the algorithm itself.
 
+### Building the next tool in this atlas
+
+See [`METHODOLOGY.md`](METHODOLOGY.md) — the full build/verification
+process (fidelity rule, content schema, citation verification, QA steps),
+written so that any collaborator or AI assistant can pick up this project
+in a fresh session and build the next tool the same way.
+
 ## License
 
 Content and code are released under
