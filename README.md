@@ -10,9 +10,11 @@ calls for it, the exact dosing as authored, and the sources behind it.
 
 **Authors:** Dr. Özgür Karcıoğlu & Dr. Satuk Buğra Han Bozatlı
 
-This tool is a companion to
-[the acute aortic dissection protocol](https://github.com/satbuhan/aortic-dissection-protocol) —
-same methodology, separate repository.
+This tool is part of a growing atlas of tools built the same way:
+
+- [Clinical Algorithm Atlas](https://satbuhan.github.io/clinical-algorithm-atlas/) — the hub page for all of them
+- [Acute aortic dissection — initial medical management](https://github.com/satbuhan/aortic-dissection-protocol) ([live site](https://satbuhan.github.io/aortic-dissection-protocol/))
+- [Influenza antiviral selection — baloxavir marboxil vs oseltamivir](https://github.com/satbuhan/influenza-antiviral-protocol) ([live site](https://satbuhan.github.io/influenza-antiviral-protocol/))
 
 ## Why this exists
 
